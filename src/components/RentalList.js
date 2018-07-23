@@ -1,19 +1,18 @@
 import React from 'react'
 import Rental from './Rental'
 
-class RentalList extends React.Component {
+const RentalList = (props) => {
 
-  eachRental = () => {
-    return this.props.listings.map((rental) => <Rental rentalObj={rental} key={rental.id} clickedRental={this.props.clickedRental}/>)
+  const eachRental = () => {
+    return props.listings.map((rental) => <Rental rentalObj={rental} key={rental.id} clickedRental={props.clickedRental}/>)
   }
 
-  render() {
-    return (
-      <div className="container">
-        <div className="row">{this.eachRental()}</div>
-      </div>
-    )
-  }
+  return (
+    <div className="container">
+      <div className="row">{eachRental()}</div>
+    </div>
+  );
+  
 }
 
 export default RentalList
