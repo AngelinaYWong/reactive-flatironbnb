@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.listingImageDisplay {
+  width: 200px;
+  height: 200px;
+  border-radius: 50px;
+  opacity: 1.0;
+}
+
+.listingImage {
+  width: 200px;
+  height: 200px;
+  border-radius: 50px;
+  opacity: 0.4;
+}
+
+.listingImage:hover {
+  width: 200px;
+  height: 200px;
+  border-radius: 50px;
+  opacity: 1.0;
+}
+
+#title {
+  font-size: 5em;
+  font-family: Impact;
+
+}
