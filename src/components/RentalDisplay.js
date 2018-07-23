@@ -1,15 +1,12 @@
 import React from 'react'
 
-class RentalDisplay extends React.Component {
+const RentalDisplay = (props) => {
 
-  render() {
-    console.log(this.props.currentRental)
-    return (<div onClick={this.props.resetCurrentListing}>
-      <h1>{this.props.currentRental.name}</h1>
-      <img src={this.props.currentRental.imageUrl} alt={this.props.currentRental.name} className='listingImageDisplay'/><br/>
-      {this.props.currentRental.price} {this.props.currentRental.priceCurrency}<br/>
+    return (<div onClick={props.resetCurrentListing}>
+      <h1>{props.currentRental.name}</h1>
+      <img src={props.currentRental.imageUrl} alt={props.currentRental.name} className='listingImageDisplay'/><br/>
+      {props.currentRental.price} {props.currentRental.priceCurrency}<br/>
       </div>)
-  }
 }
 
 export default RentalDisplay
