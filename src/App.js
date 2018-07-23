@@ -4,6 +4,7 @@ import RentalDisplay from './components/RentalDisplay'
 import Rental from './components/Rental'
 import logo from './logo.svg';
 import './App.css';
+import $ from "jquery"
 
 // Title
 // Address - Country
@@ -18,15 +19,19 @@ class App extends Component {
   }
 
   getClickedRental = (clickedRental) => {
-    this.setState((previousState) => {
-      return {currentRental: clickedRental}
-    })
+    $(".App").fadeOut(2000, () => {
+      this.setState((previousState) => {
+        return {currentRental: clickedRental}
+      })
+    });
   }
 
   resetCurrentListing = () => {
-    this.setState((previousState) => {
-      return {currentRental: null}
-    })
+    $(".App").fadeOut(2000, () => {
+      this.setState((previousState) => {
+        return {currentRental: null}
+      })
+    });
   }
 
   componentDidMount() {
@@ -39,7 +44,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{"display": "none"}}>
         <div id="title">Flatiron BnB</div>
         { this.state.currentRental ? <RentalDisplay currentRental={this.state.currentRental} resetCurrentListing={this.resetCurrentListing}/> :  <RentalList listings={this.state.listings} clickedRental={this.getClickedRental}/>}
       </div>
